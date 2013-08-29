@@ -12,10 +12,14 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="/css/normalize.css">
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="/css/main.css">
+        {{with .Css}}
+            {{range $sheet := .}}
+            <link rel="stylesheet" href="/{{$sheet}}">
+            {{end}}
+        {{end}}
+        <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+        <link rel="canonical" href="http://www.curtmfg.com">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -35,17 +39,19 @@
             </section>
 
             <footer>
-                <div class="info span9">
-                    <span>Copyright © 2012 CURT Manufacturing, LLC</span>
-                    <span>
-                        Developed By:
-                        <a href="mailto:websupport@curtmfg.com" title="Support">
-													CURT Web Support
-                        </a>
-                    </span>
-                </div>
-                <div class="span2">
-                    <img src="/img/curtLogo_onWhite.png">
+                <div class="row">
+                    <div class="info col-md-9">
+                        <span>Copyright © 2012 CURT Manufacturing, LLC</span>
+                        <span>
+                            Developed By:
+                            <a href="mailto:websupport@curtmfg.com" title="Support">
+    							CURT Web Support
+                            </a>
+                        </span>
+                    </div>
+                    <div class="logo col-md-3">
+                        <img src="/img/curtLogo_onWhite.png">
+                    </div>
                 </div>
             </footer>
         </div>

@@ -1,15 +1,43 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+/* the humans responsible & colophon */
+/* humanstxt.org */
 
-# TEAM
 
-    <name> -- <role> -- <twitter>
+/* TEAM */
+  Lead Developer: Alex Ninneman
+  Site: http://ninneman.org
+  Twitter: http://twitter.com/ninnemana
+  Location: Eau Claire, WI
 
-# THANKS
+/* THANKS */
+  Names (& URL): HTML5 Boilerplate http://html5boilerplate.com, Twitter Bootstrap http://twitter.github.com/bootstrap
 
-    <name>
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery, RequireJS, Twitter Bootstrap, GoLang
+  Software:
 
-# TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    jQuery, Modernizr
+
+                               -o/-
+                               +oo//-
+                              :ooo+//:
+                             -ooooo///-
+                             /oooooo//:
+                            :ooooooo+//-
+                           -+oooooooo///-
+           -://////////////+oooooooooo++////////////::
+            :+ooooooooooooooooooooooooooooooooooooo+:::-
+              -/+ooooooooooooooooooooooooooooooo+/::////:-
+                -:+oooooooooooooooooooooooooooo/::///////:-
+                  --/+ooooooooooooooooooooo+::://////:-
+                     -:+ooooooooooooooooo+:://////:--
+                       /ooooooooooooooooo+//////:-
+                      -ooooooooooooooooooo////-
+                      /ooooooooo+oooooooooo//:
+                     :ooooooo+/::/+oooooooo+//-
+                    -oooooo/::///////+oooooo///-
+                    /ooo+::://////:---:/+oooo//:
+                   -o+/::///////:-      -:/+o+//-
+                   :-:///////:-            -:/://
+                     -////:-                 --//:
+                       --                       -:
