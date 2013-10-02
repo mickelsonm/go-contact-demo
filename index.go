@@ -2,47 +2,27 @@ package main
 
 import (
 	"./controllers"
-	// "./helpers/database"
-	"./helpers/globals"
-	_ "./helpers/mimetypes"
-	"./helpers/plate"
+	"./controllers/middleware"
+	"./helpers/database"
+	"flag"
+	"github.com/ninnemana/web"
 	"log"
-	"net/http"
-	"os"
 )
 
 var (
-	CorsHandler = func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Add("Access-Control-Allow-Origin", "*")
-		return
-	}
-)
-
-const (
-	port = "80"
+	listenAddr = flag.String("port", "8087", "http listen address")
 )
 
 func main() {
-	// err := database.PrepareAll()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+	flag.Parse()
 
-	globals.SetGlobals()
-	server := plate.NewServer("doughboy")
+	err := database.PrepareAll()
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	server.AddFilter(CorsHandler)
+	web.Middleware(middleware.Base)
 
-	server.Get("/", controllers.Index)
-
-	dir, _ := os.Getwd()
-
-	server.Static("/", dir+"/"+"static")
-
-	http.Handle("/", server)
-
-	log.Println("Server running on port " + *globals.ListenAddr)
-
-	log.Fatal(http.ListenAndServe(*globals.ListenAddr, nil))
-
+	web.Get("/", controllers.Index)
+	web.Run("127.0.0.1:" + *listenAddr)
 }

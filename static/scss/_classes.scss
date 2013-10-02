@@ -11,10 +11,10 @@
 }
 
 .btn-action{
-	@include linear-gradient(rgb(241,89,34), rgb(230,77,44));
-	&:hover, &:focus, &:active{
-		background-color:rgb(221,79,49);
-	}
+	// @include linear-gradient(rgb(241,89,34), rgb(230,77,44));
+	// &:hover, &:focus, &:active{
+	// 	background-color:rgb(221,79,49);
+	// }
 }
 
 

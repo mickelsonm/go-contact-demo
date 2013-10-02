@@ -3,16 +3,28 @@ package rest
 import (
 	"io/ioutil"
 	"net/http"
+	"net/url"
 )
 
-func Get(url string, r *http.Request) (buf []byte, err error) {
-
-	res, err := http.Get(url)
+func Get(path string) (buf []byte, err error) {
+	resp, err := http.Get(path)
 	if err != nil {
-		return
+		return nil, err
 	}
-	buf, err = ioutil.ReadAll(res.Body)
-	res.Body.Close()
 
+	defer resp.Body.Close()
+	buf, err = ioutil.ReadAll(resp.Body)
 	return
+}
+
+func Post(path string, vals url.Values) (buf []byte, err error) {
+	resp, err := http.PostForm(path, vals)
+	if err != nil {
+		return nil, err
+	}
+
+	defer resp.Body.Close()
+	buf, err = ioutil.ReadAll(resp.Body)
+
+	return buf, err
 }

@@ -1,14 +1,15 @@
 package database
 
 import (
-	"github.com/ziutek/mymysql/thrsafe"
+	"github.com/ziutek/mymysql/autorc"
 	"log"
 	"os"
 )
 
 var (
 	// MySQL Connection Handler
-	Db = thrsafe.New(db_proto, "", db_addr, db_user, db_pass, db_name)
+	CurtDevDb = autorc.New(db_proto, "", db_addr, db_user, db_pass, CurtDevdb_name)
+	AdminDb   = autorc.New(db_proto, "", db_addr, db_user, db_pass, Admindb_name)
 )
 
 func MysqlError(err error) (ret bool) {

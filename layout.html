@@ -2,68 +2,47 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>CURT Reporting</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>CURT Framework</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+	</head>
+	<body>
 
-        <link rel="stylesheet" href="/css/main.css">
-        {{with .Css}}
-            {{range $sheet := .}}
-            <link rel="stylesheet" href="/{{$sheet}}">
-            {{end}}
-        {{end}}
-        <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
-        <link rel="canonical" href="http://www.curtmfg.com">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
+		<div class="container">
+			<header>
+				<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+						<div class="navbar-header">
+							<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Menu</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a href="/" class="navbar-brand">
+								<img src="/img/logo.png" alt="CURT Manufacturing, LLC">
+							</a>
+						</div>
+						<div class="collapse navbar-collapse nabar-ex1-collapse">
+						</div>
+					</nav>
+			</header>
 
-        <div class="container">
-            <header>
-                <a href="/" title="CURT Manufacturing, LLC" class="logo">
-                    <img src="/img/logo.png">
-                </a>
-                <span class="sub-title"></span>
-            </header>
+			<section class="content">
+				{{template "index" .}}
+			</section>
 
-            <section class="content">
-            	{{template "content" .}}
-            </section>
+			<footer>
+				<p>&copy; CURT Manufacturing, LLC</p>
+			</footer>
+		</div>
 
-            <footer>
-                <div class="row">
-                    <div class="info col-md-9">
-                        <span>Copyright © 2012 CURT Manufacturing, LLC</span>
-                        <span>
-                            Developed By:
-                            <a href="mailto:websupport@curtmfg.com" title="Support">
-    							CURT Web Support
-                            </a>
-                        </span>
-                    </div>
-                    <div class="logo col-md-3">
-                        <img src="/img/curtLogo_onWhite.png">
-                    </div>
-                </div>
-            </footer>
-        </div>
-
-        <script type="text/javascript" data-main="/js/main" src="/js/libs/require-jquery-bootstrap.min.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+		<script type="text/javascript" data-main="/js/main" src="/js/libs/require-jquery-bootstrap.min.js"></script>
+	</body>
 </html>
