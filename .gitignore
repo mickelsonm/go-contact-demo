@@ -7,3 +7,4 @@ ConnectionString.go
 EmailSettings.go
 server.log
 config/deploy_settings.json
+node_modules
