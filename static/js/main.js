@@ -57,9 +57,8 @@ require(
 	'html5',
 	'alertify',
 	'jquery.tablesorter',
-	'jquery.tablesorter.widget',
-	'/js/plugins.js'],
-	function($, bootstrap, nprogress,mustache, mod, spinner, html5, alertify, tablesorter, tablesorter_widgets, plugins){
+	'jquery.tablesorter.widget'],
+	function($, bootstrap, nprogress,mustache, mod, spinner, html5, alertify, tablesorter, tablesorter_widgets){
 
 		$(function(){
 			if(!Modernizr.inputtypes.date){
@@ -158,6 +157,18 @@ require(
 				// ,uitheme : "bootstrap"
 
 				}
+			});
+
+			//the button click event code for 'view message' on index page
+			$(".view-message").click(function(){
+				var messageID = $(this).attr("id");
+				$.ajax({
+					type: 'POST',
+					url: '/GetMessage/'+messageID,
+					success: function(data){
+						alert(data);
+					}
+				});
 			});
 
 			// return $;

@@ -8,8 +8,7 @@ import (
 
 var (
 	// MySQL Connection Handler
-	CurtDevDb = autorc.New(db_proto, "", db_addr, db_user, db_pass, CurtDevdb_name)
-	AdminDb   = autorc.New(db_proto, "", db_addr, db_user, db_pass, Admindb_name)
+	CurtDevDb = autorc.New(db_proto, "", db_addr, db_user, db_pass, db_name)
 )
 
 func MysqlError(err error) (ret bool) {

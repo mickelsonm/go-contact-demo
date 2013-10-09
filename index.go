@@ -23,6 +23,8 @@ func main() {
 
 	web.Middleware(middleware.Base)
 
+	web.Post("/GetMessage/(.*)", controllers.GetMessage)
+	web.Post("/Add", controllers.Add)
 	web.Get("/", controllers.Index)
 	web.Run("127.0.0.1:" + *listenAddr)
 }

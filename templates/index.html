@@ -5,6 +5,51 @@
 	<div class="page-header">
 		<h1>Welcome to the CURT Web Framework <small><a href="https://github.com/curt-labs/WebFramework/tree/golang">golang</a></small></h1>
 	</div>
+
+	<form action="/Add" method="post" class="form-horizontal">
+		<label for="fname">First Name:</label>
+		<input type="text" id="fname" name="fname" class="fname" placeholder="Enter your first name" />
+
+
+		<label for="lname">Last Name:</label>
+		<input type="text" id="lname" name="lname" class="lname" placeholder="Enter your last name" />
+
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email" class="email" placeholder="Enter your email" />
+
+
+		<label for="message">Message:</label>
+		<textarea rows="4" cols="50" id="message" name="message" class="message" placeholder="Enter your message"></textarea>
+
+
+		<input type="submit" class="btn-primary" value="Submit" />
+	</form>
+
+	<table class="table table-hover tablebordered">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Message</th>
+				<th>Created</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{range .Contacts}}
+			<tr>
+				<td>{{.Fname}}</td>
+				<td>{{.Lname}}</td>
+				<td>{{.Email}}</td>
+				<td>{{.Message}}</td>
+				<td>{{.Created}}</td>
+				<td>
+					<div id="{{.Id}}" class="btn btn-primary view-contact view-message">View Message</div>
+				</td>
+			</tr>
+			{{end}}
+		</tbody>
+	</table>
 </section>
 
 {{end}}
